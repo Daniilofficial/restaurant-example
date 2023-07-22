@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Tinos&display=swap" rel="stylesheet">
+</head>
+<body>
+    <svg style="display: none;">
+        <symbol id="cart" viewBox="0 0 24.00 24.00">
+          <g>
+              <path  d="M2 2C1.44772 2 1 2.44772 1 3C1 3.55228 1.44772 4 2 4H2.47241C2.92336 4 3.31852 4.30182 3.43717 4.73688L3.85342 6.26312L6 14.1339V16C6 16.6935 6.23533 17.3321 6.63048 17.8402C6.23824 18.2816 6 18.863 6 19.5C6 20.8807 7.11929 22 8.5 22C9.88071 22 11 20.8807 11 19.5C11 19.3288 10.9828 19.1616 10.95 19H14.05C14.0172 19.1616 14 19.3288 14 19.5C14 20.8807 15.1193 22 16.5 22C17.8807 22 19 20.8807 19 19.5C19 19.1715 18.9366 18.8578 18.8215 18.5704C18.934 18.4086 19 18.212 19 18C19 17.4477 18.5523 17 18 17H16.5H9C8.44772 17 8 16.5523 8 16V15H18.236C19.1381 15 19.9285 14.3962 20.1657 13.5258L21.8007 7.52583C22.1473 6.25364 21.1896 5 19.871 5H5.58198L5.3667 4.21065C5.01074 2.90547 3.82526 2 2.47241 2H2ZM16.5 19C16.2239 19 16 19.2239 16 19.5C16 19.7761 16.2239 20 16.5 20C16.7761 20 17 19.7761 17 19.5C17 19.2239 16.7761 19 16.5 19ZM18.236 13H7.7638L6.12743 7H19.871L18.236 13ZM8.5 19C8.22386 19 8 19.2239 8 19.5C8 19.7761 8.22386 20 8.5 20C8.77614 20 9 19.7761 9 19.5C9 19.2239 8.77614 19 8.5 19Z"/>
+          </g>
+        </symbol>
+        <symbol id="phone" viewBox="0 0 24 24">
+          <g>
+            <path d="M14.5 6.5C15.2372 6.64382 15.9689 6.96892 16.5 7.5C17.0311 8.03108 17.3562 8.76284 17.5 9.5M15 3C16.5315 3.17014 17.9097 3.91107 19 5C20.0903 6.08893 20.8279 7.46869 21 9M20.9995 16.4767V19.1864C21.0037 20.2223 20.0723 21.0873 19.0265 20.9929C10.0001 21 3.00006 13.935 3.00713 4.96919C2.91294 3.92895 3.77364 3.00106 4.80817 3.00009H7.52331C7.96253 2.99577 8.38835 3.151 8.72138 3.43684C9.66819 4.24949 10.2772 7.00777 10.0429 8.10428C9.85994 8.96036 8.99696 9.55929 8.41026 10.1448C9.69864 12.4062 11.5747 14.2785 13.8405 15.5644C14.4272 14.9788 15.0274 14.1176 15.8851 13.935C16.9855 13.7008 19.7615 14.3106 20.5709 15.264C20.858 15.6021 21.0105 16.0337 20.9995 16.4767Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </symbol>
+        <symbol id="Telegram" viewBox="0 0 256 256">
+            <g>
+				<path d="M128,0 C57.307,0 0,57.307 0,128 L0,128 C0,198.693 57.307,256 128,256 L128,256 C198.693,256 256,198.693 256,128 L256,128 C256,57.307 198.693,0 128,0 L128,0 Z" fill="#40B3E0">
+
+</path>
+				<path d="M190.2826,73.6308 L167.4206,188.8978 C167.4206,188.8978 164.2236,196.8918 155.4306,193.0548 L102.6726,152.6068 L83.4886,143.3348 L51.1946,132.4628 C51.1946,132.4628 46.2386,130.7048 45.7586,126.8678 C45.2796,123.0308 51.3546,120.9528 51.3546,120.9528 L179.7306,70.5928 C179.7306,70.5928 190.2826,65.9568 190.2826,73.6308" fill="#FFFFFF">
+
+</path>
+				<path d="M98.6178,187.6035 C98.6178,187.6035 97.0778,187.4595 95.1588,181.3835 C93.2408,175.3085 83.4888,143.3345 83.4888,143.3345 L161.0258,94.0945 C161.0258,94.0945 165.5028,91.3765 165.3428,94.0945 C165.3428,94.0945 166.1418,94.5735 163.7438,96.8115 C161.3458,99.0505 102.8328,151.6475 102.8328,151.6475" fill="#D2E5F1">
+
+</path>
+				<path d="M122.9015,168.1154 L102.0335,187.1414 C102.0335,187.1414 100.4025,188.3794 98.6175,187.6034 L102.6135,152.2624" fill="#B5CFE4">
+
+</path>
+		</g>
+        </symbol>
+        <symbol id="discord" viewBox="0 0 1024 1024">
+            <circle cx="512" cy="512" r="512" style="fill:#5865f2"/>
+   <path d="M689.43 349a422.21 422.21 0 0 0-104.22-32.32 1.58 1.58 0 0 0-1.68.79 294.11 294.11 0 0 0-13 26.66 389.78 389.78 0 0 0-117.05 0 269.75 269.75 0 0 0-13.18-26.66 1.64 1.64 0 0 0-1.68-.79A421 421 0 0 0 334.44 349a1.49 1.49 0 0 0-.69.59c-66.37 99.17-84.55 195.9-75.63 291.41a1.76 1.76 0 0 0 .67 1.2 424.58 424.58 0 0 0 127.85 64.63 1.66 1.66 0 0 0 1.8-.59 303.45 303.45 0 0 0 26.15-42.54 1.62 1.62 0 0 0-.89-2.25 279.6 279.6 0 0 1-39.94-19 1.64 1.64 0 0 1-.16-2.72c2.68-2 5.37-4.1 7.93-6.22a1.58 1.58 0 0 1 1.65-.22c83.79 38.26 174.51 38.26 257.31 0a1.58 1.58 0 0 1 1.68.2c2.56 2.11 5.25 4.23 8 6.24a1.64 1.64 0 0 1-.14 2.72 262.37 262.37 0 0 1-40 19 1.63 1.63 0 0 0-.87 2.28 340.72 340.72 0 0 0 26.13 42.52 1.62 1.62 0 0 0 1.8.61 423.17 423.17 0 0 0 128-64.63 1.64 1.64 0 0 0 .67-1.18c10.68-110.44-17.88-206.38-75.7-291.42a1.3 1.3 0 0 0-.63-.63zM427.09 582.85c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.02 28.44-20.37 51.6-46 51.6zm170.13 0c-25.23 0-46-23.16-46-51.6s20.38-51.6 46-51.6c25.83 0 46.42 23.36 46 51.6.01 28.44-20.17 51.6-46 51.6z" style="fill:#fff"/>
+   </symbol>
+    </svg>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="logo">
+                    <div class="logo__part1"></div>
+                    <div class="logo__part2"></div>
+                </div>
+                <nav class="nav">
+             <div class="header__burger"><span></span>
+                <div class="header__menu">
+                <div class="nav__inner">
+                        <a href="#" class="nav__link">Главная</a>
+                        <a href="#" class="nav__link">Меню</a>
+                        <a href="#" class="nav__link">О нас</a>
+                        <a href="#" class="nav__link">Бронь</a>
+                        <a href="#" class="nav__link">
+                            <svg class="icon">
+                            <use xlink:href="#cart"></use>
+                          </svg>
+                        </a>
+                        <div class="border"></div>
+                        <ul>
+                            <li><svg class="icon">
+                                <use xlink:href="#phone"></use>
+                            </svg>+999-888-76-54</li>
+                            <li>Свяжитесь с нами для бронирования</li>
+                        </ul>
+                        <div class="btn btn1"><a href="#">ЗАКАЗ СТОЛИКА</a></div>
+                    </div><!--header__menur-->
+                </div><!--header__burger-->
+            </div><!--nav__inner-->
+        </nav>
+    </div><!--header__inner-->
+    <div class="header__titles">
+        <div class="header__title1">Добро пожаловать в</div>
+        <div class="header__title2">Наш ресторан</div>
+        <div class="header__title3">Дом лучшей еды</div>
+        <div class="btn btn2"><a href="#">ЗАКАЗ СТОЛИКА</a></div>
+            </div>
+        </div><!--container-->
+    </header><!--header-->
+<!-- INTRO -->
+<div class="intro">
+    <div class="container">
+        <div class="intro__inner">
+            <div class="intro__item">
+                <div class="intro__img"><img src="img/Rectangle.jpg" alt=""></div>
+                <div class="intro__title">Магическая <span>Атмосфера</span></div>
+                <div class="intro__text">В нашем заведении царит магическая атмосфера наполненная вкусными ароматами</div>
+            </div>
+            <div class="intro__item">
+                <div class="intro__img"><img src="img/Rectangle.jpg" alt=""></div>
+                <div class="intro__title">Лучшее качество <span>Еды</span></div>
+                <div class="intro__text">Качество нашей 
+                    Еды - отменное!
+                </div>
+            </div>
+            <div class="intro__item">
+                <div class="intro__img"><img src="img/Rectangle.jpg" alt=""></div>
+                <div class="intro__title">Недорогая  <span>Еда</span></div>
+                <div class="intro__text">Стоимость нашей Еды зависит только от ее количества. Качество всегда на высоте!</div>
+            </div>
+        </div><!--intro__inner-->
+    </div><!--container-->
+</div><!--INTRO-->
+
+<!-- STory -->
+<div class="story">
+    <div class="container">
+        <div class="story__inner">
+            <div class="story__part1">
+                <div class="story__title">Наша <span>История</span></div>
+                <div class="story__text">Как и у любого другого самобытного места, у нас есть своя, особая история. Идея ресторана пришла основателям неожиданно. Во время прогулки по лесу создатель нашего ресторана застрял в сотнях километров от ближайшего населенного пункта. Вдали от цивилизации и связи им пришлось навремя обустровать себе нехитрый быт, добывать и готовить себе еду.</div>
+                <div class="story__container">
+                    <div class="story__item">
+                        <div class="item__num">93</div>
+                        <div class="item__type">Напитки</div>
+                    </div>
+                    <div class="story__item">
+                        <div class="item__num">206</div>
+                        <div class="item__type">Еда</div>
+                    </div>
+                    <div class="story__item">
+                        <div class="item__num">71</div>
+                        <div class="item__type">Закуски</div>
+                    </div>
+                </div><!--story__container-->
+            </div><!--story__part2-->
+            <div class="story__part2">
+ 
+                <img src="img/Story/images0.75.jpg" alt="" class="story__img1">
+  
+            </div><!--story__part2-->
+        </div><!--Story__inner-->
+    </div><!--container-->
+</div><!--Story-->
+
+<!-- Layer -->
+<div class="layer">
+    <div class="layer__color">
+        <div class="container">
+            <div class="layer__inner">
+                <div class="layer__content">
+                    <div class="layer__title">Отпразднуйте в одном из 
+                     самых лучших ресторанов.</div>
+                    <div class="layer__text">Только в этом месяце бизнес-ланч   от 250руб</div>
+                </div>  
+                <div class="layer__content2">
+                    <div class="btn3"><a href="#">ЗАКАЗ СТОЛИКА</a></div>
+                </div>
+            </div><!--layer__inner-->
+        </div><!--container-->
+    </div><!--layer__color-->
+</div><!--layer-->
+<!-- Menu -->
+<menu >
+  
+    <div class="menu__title">Наши<span> Блюда</span></div>
+<div class="section">
+
+    <ul>
+        <li class="list" id="all">Меню</li>
+        <li class="list" id="fast-food">Фаст Фуд</li>
+        <li class="list" id="soup">Супы</li>
+        <li class="list" id="salad">Салаты</li>
+        <li class="list" id="drinks">Напитки</li>
+        <li class="list" id="meat">Мясные блюда</li>
+    </ul>
+
+    
+    
+<div class="slider">
+<div class="wrapper">
+    <div class="image-slider swiper-container">
+                    
+        <div class="image-slider__wrapper swiper-wrapper">
+                    
+
+
+            <div class="image-slider__slide swiper-slide itembox fast-food">
+               <img src="img/Menu/hamburger.jpg" alt="">
+               <div class="js__btn">
+                   <div class="btn-style" data-id="s1">+</div><div class="btn-style">-</div>
+               </div>
+            </div>
+
+            <div class="image-slider__slide swiper-slide itembox fast-food">
+               <img src="img/Menu/cheeseburger.jpg" alt="">
+               <div class="js__btn">
+                   <div class="btn-style" data-id="s1">+</div><div class="btn-style">-</div>
+               </div>
+            </div>
+
+            <div class="image-slider__slide swiper-slide itembox fast-food">
+               <img src="img/Menu/big-burger.jpg" alt="">
+               <div class="js__btn">
+                   <div class="btn-style">+</div><div class="btn-style">-</div>
+               </div>
+            </div>
+
+            <div class="image-slider__slide swiper-slide itembox fast-food">
+
+               <img src="img/Menu/burger.jpg" alt="">
+               <div class="js__btn">
+                   <div class="btn-style">+</div><div class="btn-style">-</div>
+               </div>
+            </div>
+
+            <div class="image-slider__slide swiper-slide itembox fast-food">
+
+               <img src="img/Menu/sushi.jpg" alt="">
+               <div class="js__btn">
+                   <div class="btn-style">+</div><div class="btn-style">-</div>
+               </div>
+            </div>
+            
+            <div class="image-slider__slide swiper-slide itembox fast-food">
+
+               <img src="img/Menu/pizza1.jpg" alt="">
+               <div class="js__btn">
+                   <div class="btn-style">+</div><div class="btn-style">-</div>
+               </div>
+            </div> 
+
+                <div class="image-slider__slide swiper-slide itembox fast-food">
+                   <img src="img/Menu/pizza2.jpg" alt="">
+                   <div class="js__btn">
+                       <div class="btn-style">+</div><div class="btn-style">-</div>
+                   </div>
+                </div>
+
+                <div class="image-slider__slide swiper-slide itembox fast-food">
+                   <img src="img/Menu/pizza3.jpg" alt="">
+                   <div class="js__btn">
+                       <div class="btn-style">+</div><div class="btn-style">-</div>
+                   </div>
+                </div>
+                
+                <div class="image-slider__slide swiper-slide itembox fast-food">
+                   <img src="img/Menu/pizza4.png" alt="">
+                   <div class="js__btn">
+                       <div class="btn-style">+</div><div class="btn-style">-</div>
+                   </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox soup">
+                    <img src="img/Menu/soup1.jpg" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                 </div>
+                 
+                 <div class="image-slider__slide swiper-slide itembox soup">
+                     <img src="img/Menu/soup2.jpg" alt="">
+                     <div class="js__btn">
+                         <div class="btn-style">+</div><div class="btn-style">-</div>
+                     </div>
+                  </div>
+                  
+                  <div class="image-slider__slide swiper-slide itembox soup">
+                      <img src="img/Menu/soup3.jpg" alt="">
+                      <div class="js__btn">
+                          <div class="btn-style">+</div><div class="btn-style">-</div>
+                      </div>
+                   </div>
+                   
+                   <div class="image-slider__slide swiper-slide itembox soup">
+                       <img src="img/Menu/soup4.jpg" alt="">
+                       <div class="js__btn">
+                           <div class="btn-style">+</div><div class="btn-style">-</div>
+                       </div>
+                    </div>
+                    
+                    <div class="image-slider__slide swiper-slide itembox soup">
+                        <img src="img/Menu/soup5.jpg" alt="">
+                        <div class="js__btn">
+                            <div class="btn-style">+</div><div class="btn-style">-</div>
+                        </div>
+                     </div>
+                     
+                     <div class="image-slider__slide swiper-slide itembox soup">
+                         <img src="img/Menu/soup6.jpg" alt="">
+                         <div class="js__btn">
+                             <div class="btn-style">+</div><div class="btn-style">-</div>
+                         </div>
+                      </div>
+                <div class="image-slider__slide swiper-slide itembox salad">
+                   <img src="img/Menu/salad1.jpg" alt="">
+                   <div class="js__btn">
+                       <div class="btn-style">+</div><div class="btn-style">-</div>
+                   </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox salad">
+                   <img src="img/Menu/salad2.jpg" alt="">
+                   <div class="js__btn">
+                       <div class="btn-style">+</div><div class="btn-style">-</div>
+                   </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox salad">
+                   <img src="img/Menu/salad3.jpg" alt="">
+                   <div class="js__btn">
+                       <div class="btn-style">+</div><div class="btn-style">-</div>
+                   </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox salad">
+                   <img src="img/Menu/salad4.jpg" alt="">
+                   <div class="js__btn">
+                       <div class="btn-style">+</div><div class="btn-style">-</div>
+                   </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox salad">
+                   <img src="img/Menu/salad5.png" alt="">
+                   <div class="js__btn">
+                       <div class="btn-style">+</div><div class="btn-style">-</div>
+                   </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox salad">
+                   <img src="img/Menu/salad6.jpg" alt="">
+                   <div class="js__btn">
+                       <div class="btn-style">+</div><div class="btn-style">-</div>
+                   </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox salad">
+                   <img src="img/Menu/salad7.jpg" alt="">
+                   <div class="js__btn">
+                       <div class="btn-style">+</div><div class="btn-style">-</div>
+                   </div>
+                </div>
+
+                <div class="image-slider__slide swiper-slide itembox meat">
+                    <img src="img//Menu/meat1.jpg" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox meat">
+                    <img src="img//Menu/meat2.jpg" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox meat">
+                    <img src="img//Menu/meat3.jpg" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox meat">
+                    <img src="img//Menu/meat4.jpg" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox meat">
+                    <img src="img//Menu/meat5.jpg" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox meat">
+                    <img src="img//Menu/meat6.jpg" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox meat">
+                    <img src="img//Menu/meat7.jpg" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+
+                <div class="image-slider__slide swiper-slide itembox drinks">
+                    <img src="img//Menu/drinks1.png" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+
+                <div class="image-slider__slide swiper-slide itembox drinks">
+
+                    <img src="img//Menu/drinks2.png" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+
+                <div class="image-slider__slide swiper-slide itembox drinks">
+                    <img src="img//Menu/drinks3.jpg" alt="">  
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox drinks">
+
+                    <img src="img//Menu/drinks4.png" alt="">               
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+                <div class="image-slider__slide swiper-slide itembox drinks">
+                    <img src="img//Menu/drinks4.png" alt="">
+                    <div class="js__btn">
+                        <div class="btn-style">+</div><div class="btn-style">-</div>
+                    </div>
+                </div>
+
+
+            </div><!--swiper-wrapper-->                 
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <!-- <div class="swiper-pagination"></div> -->
+                        <!-- <div class="swiper-scrollbar"></div> -->
+                    </div>
+</div>
+</div>
+</menu>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+
+            <div class="footer-col">
+                <h4>Наш ресторан</h4>
+                <ul>
+                    <li><a href="#">Бронь</a></li>
+                    <li><a href="#">Обзоры блюд</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Мастер классы</a></li>
+                    <li><a href="#">Новости</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Помощь</h4>
+                <ul>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Номинации</a></li>
+                    <li><a href="#">Наши повора</a></li>
+                    <li><a href="#">Фото сместа</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Ивенты</h4>
+                <ul>
+                    <li><a href="#">Дни рождения</a></li>
+                    <li><a href="#">Новый год</a></li>
+                    <li><a href="#">Свадьба</a></li>
+                    <li><a href="#">Другие...</a></li>
+
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Связь с нами</h4>
+                <ul>
+                    <div class="social__links">
+                        <a href="https://t.me/Daniil__official" class="social-link">
+                            <svg class="svg-icon">
+                                <use xlink:href="#Telegram"></use>
+                            </svg>
+                        </a>
+                        <a href="https://discord.gg/Daniil__official" class="social-link">
+                            <svg class="svg-icon">
+                            <use xlink:href="#discord"></use>
+                            </svg>
+                        </a>
+                        <!-- <a href="#" class="social-link">
+                            <svg class="svg-icon">
+                            <use xlink:href="#Telegram"></use>
+                            </svg>
+                        </a> -->
+                    </div>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<script
+src="https://code.jquery.com/jquery-3.7.0.js"
+integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js.js"></script>
+</body>
+</html>
