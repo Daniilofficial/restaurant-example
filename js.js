@@ -5,88 +5,112 @@ document.querySelector('.header__burger').addEventListener('click', () =>{
 })
 
 
-
 $(document).ready(function(){
-    $('.js__btn').remove()
-
+    $('.slider').slick({
+        arrows: true,
+        // dots: true,
+        // // slidesToShow: 3,
+        // slidesToScroll: 3,
+        speed: 500,
+        // easing: 'ease',
+        infinite: false,
+        draggable: false,
+        touchTreshold: 10,
+        waitForAnimate: false,
+        centerMode: true,
+        // initialSlide: 2,
+        variableWidth: true,
+        // rows: 2,
+        // responsive: 
+    });
+    var min = $('.min-slider')
     
-    const cards = $('.itembox')
-    const fastFood = $('.fast-food')
-    const salad = $('.salad')
-    const meat = $('.meat')
-    const soup = $('.soup')
-    const drinks = $('.drinks')
-    
-    // function reset(classs) {
-        $('.list:first').click(function(){
 
-            $('.itembox').detach()
-            $('.image-slider__wrapper').append(cards)
-            $('.image-slider').fadeIn(10)
-            
-            $('.swiper-wrapper').hide().show().css({
-            'transform': 'translate3d(0px, 0px, 0px) ',
-                'transition-duration': '0ms',
-            })
+        // min.slick({
+        //     // vertical: true,
+        //     // rows: 3,
+        //     // slidesToShow: 3,
+        //     arrows: false,
+        //     variableWidth: true,
+        //     autoplay:true,
+        // })
+
+
+
+
+
+
+    //добавляет бедый фон при клике
+    $('#all').addClass('sss')
+    if ('.list:clicked') {
+        $('.list').click(function(){
+
+            $('.list').removeClass('sss')
+            $(this).addClass('sss')
+
+        })
+
+
+        }
+    //Не дает отфильтровать слайдер
+    var filtered = false;
+    //Фильтрует слайдер
+    function returning(className) {
+        $('.slider').slick('slickUnfilter', + className);
+    }
+    //Сбрасывает весь слайдер или возвращает к началу
+    function beginning(){
+        $('.slick-track').css({
+            'transform': 'translate3d(-15px, 0, 0)'
+        })
+        $('.slider').slick('slickGoTo')
+
+    }
+    $("#all").click(function(){
+        $('.slider').slick('slickUnfilter')
+        filtered = false;
+        beginning()
     })
     $('#fast-food').click(function(){
-        $('.itembox').remove()
-        $('.image-slider__wrapper').append(fastFood)
-        $('.image-slider').hide(10).fadeIn(10)
-    
-
+        returning('.fast-food')
+        $('.slider').slick('slickFilter', '.fast-food')
+        filtered = true;
+        beginning()
+    })
+    $('#meat').click(function(){
+        returning('.meat')
+        $('.slider').slick('slickFilter', '.meat')
+        filtered = true;
+        beginning()
+    })
+    $('#salad').click(function(){
+        returning('.meat')
+        $('.slider').slick('slickFilter', '.salad')
+        filtered = true;
+        beginning()
     })
     $('#soup').click(function(){
-        $('.itembox').remove()
-        $('.image-slider__wrapper').append(soup)
-        $('.image-slider').hide(10).fadeIn(10)
-    
-
-    })
-    
-    $('#salad').click(function(){
-        $('.itembox').remove()
-        $('.image-slider__wrapper').append(salad)
-        $('.image-slider').hide(10).fadeIn(10)
-    
-
-    })
-    
-    $('#meat').click(function(){
-        $('.itembox').remove()
-        $('.image-slider__wrapper').append(meat)
-        $('.image-slider').hide(10).fadeIn(10)
-
+        returning('.soup')
+        $('.slider').slick('slickFilter', '.soup')
+        filtered = true;
+        beginning()
     })
     $('#drinks').click(function(){
-        $('.itembox').remove()
-        $('.image-slider__wrapper').append(drinks)
-        $('.image-slider').hide(10).fadeIn(10)
-
+        returning('.drinks')
+        $('.slider').slick('slickFilter', '.drinks')
+        filtered = true;
+        beginning()
     })
-    // const swiperdd2 = new Swiper('.image-sliderr',{
 
-        // })
-        const swiper = new Swiper('.image-slider', {
-            // lazy: {
-        //     loadPrevNext: true,
-        // },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        scrollbar: {
-            el: '.swiper-scrollbar',
-            draggable: true,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,  
-        },
-        speed: 800,
-        slidesPerView: 'auto',
-        spaceBetween: 10,
-    })
+
+    let item = document.querySelectorAll(".box__item")
+    for (const elem of item) {
+        elem.addEventListener("click", function() {
+        this.classList.toggle("actived")
+    });
+    }
     
-    const myswiper = new Swiper('.my-slider')
+
+    
+
 })
