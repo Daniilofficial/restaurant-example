@@ -22,24 +22,9 @@ $(document).ready(function(){
         variableWidth: true,
         // rows: 2,
         // responsive: 
+        prevArrow: '<img src="img/svg/left.svg" alt="" class="slick-prev">',
+        nextArrow: '<img src="img/svg/left.svg" alt=""  class="slick-next">',
     });
-    var min = $('.min-slider')
-    
-
-        // min.slick({
-        //     // vertical: true,
-        //     // rows: 3,
-        //     // slidesToShow: 3,
-        //     arrows: false,
-        //     variableWidth: true,
-        //     autoplay:true,
-        // })
-
-
-
-
-
-
     //добавляет бедый фон при клике
     $('#all').addClass('sss')
     if ('.list:clicked') {
